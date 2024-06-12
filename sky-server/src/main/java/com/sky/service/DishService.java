@@ -13,7 +13,7 @@ import java.util.List;
  * @author 刘家雯
  * @version 1.0
  */
-@Component
+
 public interface DishService {
 
     /**
