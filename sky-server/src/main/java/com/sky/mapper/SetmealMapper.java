@@ -75,6 +75,7 @@ public interface SetmealMapper {
      * 根据id动态修改菜品
      * @param setmeal
      */
+    @AutoFill(OperationType.UPDATE)
     void update(Setmeal setmeal);
 
 }

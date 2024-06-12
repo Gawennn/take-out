@@ -25,4 +25,6 @@ public class MessageConstant {
     public static final String ORDER_NOT_FOUND = "订单不存在";
 
     public static final String ALREADY_EXIST = "已存在";
+
+    public static final String DISH_BE_STOPED_BY_SETMEAL = "当前菜品关联了套餐，不能停售";
 }
