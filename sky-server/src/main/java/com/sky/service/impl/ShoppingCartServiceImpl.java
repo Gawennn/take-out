@@ -43,8 +43,8 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
         //判断当前加入到购物车的商品是否已经存在了
         ShoppingCart shoppingCart = new ShoppingCart();
         BeanUtils.copyProperties(shoppingCartDTO, shoppingCart);
-        Long usertId = BaseContext.getCurrentId();
-        shoppingCart.setUserId(usertId);
+        Long userId = BaseContext.getCurrentId();
+        shoppingCart.setUserId(userId);
 
         List<ShoppingCart> list = shoppingCartMapper.list(shoppingCart);
 
@@ -55,7 +55,6 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
             shoppingCartMapper.updateNumberById(cart);
         } else {
             //如果不存在，需要插入一条购物车数据
-
             //判断本次添加到购物车的是菜品还是套餐
             Long dishId = shoppingCartDTO.getDishId();
             if (dishId != null) {
@@ -78,5 +77,20 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
             shoppingCart.setCreateTime(LocalDateTime.now());
             shoppingCartMapper.insert(shoppingCart);
         }
+    }
+
+    /**
+     * 查看购物车
+     *
+     * @return
+     */
+    public List<ShoppingCart> showShoppingCart() {
+        //获得当前微信用户的id
+        Long userId = BaseContext.getCurrentId();
+        ShoppingCart shoppingCart = ShoppingCart.builder()
+                .userId(userId)
+                .build();
+        List<ShoppingCart> list = shoppingCartMapper.list(shoppingCart);
+        return list;
     }
 }
