@@ -17,3 +17,7 @@ sky:
   wechat:
     appid: wxdca702eaec0d8e2d
     secret: a43c895c3cab25637a9bc68d7db3651a
+  shop:
+    address: 南京市栖霞区仙林大道163号
+  baidu:
+    ak: ev3m11hFYwJtO1nEy8buEaS9Uh6XbTI5
