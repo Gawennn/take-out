@@ -17,7 +17,7 @@ public interface ReportService {
      * @param end
      * @return
      */
-    TurnoverReportVO getTurnoverStatics(LocalDate begin,LocalDate end);
+    TurnoverReportVO getTurnoverStatistics(LocalDate begin,LocalDate end);
 
     /**
      * 统计指定时间区间内的用户数据
@@ -25,5 +25,5 @@ public interface ReportService {
      * @param end
      * @return
      */
-    UserReportVO getUserStatics(LocalDate begin, LocalDate end);
+    UserReportVO getUserStatistics(LocalDate begin, LocalDate end);
 }

@@ -41,7 +41,7 @@ public class ReportServiceImpl implements ReportService {
      * @param end
      * @return
      */
-    public TurnoverReportVO getTurnoverStatics(LocalDate begin, LocalDate end) {
+    public TurnoverReportVO getTurnoverStatistics(LocalDate begin, LocalDate end) {
         //当前集合用于存放从begin到end范围内的每天的日期
         List<LocalDate> dateList = new ArrayList<>();
 
@@ -71,7 +71,11 @@ public class ReportServiceImpl implements ReportService {
         }
 
         //封装返回结果
-        return TurnoverReportVO.builder().dateList(StringUtils.join(dateList, ",")).turnoverList(StringUtils.join(turnoverList, ",")).build();
+        return TurnoverReportVO
+                .builder()
+                .dateList(StringUtils.join(dateList, ","))
+                .turnoverList(StringUtils.join(turnoverList, ","))
+                .build();
     }
 
     /**
@@ -81,7 +85,7 @@ public class ReportServiceImpl implements ReportService {
      * @param end
      * @return
      */
-    public UserReportVO getUserStatics(LocalDate begin, LocalDate end) {
+    public UserReportVO getUserStatistics(LocalDate begin, LocalDate end) {
         //存放从begin到end之间的每天对应的日期
         List<LocalDate> dateList = new ArrayList<>();
 
