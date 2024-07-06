@@ -6,18 +6,3 @@ sky:
     database: sky_take_out
     username: root
     password: 12345678
-  alioss:
-    endpoint: oss-cn-beijing.aliyuncs.com
-    access-key-id: LTAI5tJRGgvBKjGM2rGM4cBJ
-    access-key-secret: GZqWioKGeCsTpNUVGcJxUYfc66BiIh
-    bucket-name: web-tlias11111111111113
-  redis:
-    host: localhost
-    port: 6379
-  wechat:
-    appid: wxdca702eaec0d8e2d
-    secret: a43c895c3cab25637a9bc68d7db3651a
-  shop:
-    address: 南京市栖霞区仙林大道163号
-  baidu:
-    ak: ev3m11hFYwJtO1nEy8buEaS9Uh6XbTI5
