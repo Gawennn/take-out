@@ -50,9 +50,8 @@ public class OrderTask {
     @Scheduled(cron = "0 0 1 * * ?") //每天凌晨1点触发一次
     public void processDeliveryOrder(){
         log.info("定时处理处于派送中的订单：{}",LocalDateTime.now());
-
+        // select * from orders where status = 4 and order_time < 当前时间-1小时
         LocalDateTime time = LocalDateTime.now().plusMinutes(-60);
-
         List<Orders> ordersList = orderMapper.getByStatusAndOrderTimeLT(Orders.DELIVERY_IN_PROGRESS, time);
 
         if (ordersList != null && ordersList.size() > 0){
